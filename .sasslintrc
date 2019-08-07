@@ -1,0 +1,16 @@
+{
+    "rules": {
+        "indentation": [
+            1,
+            {
+                "size": "tab"
+            }
+        ],
+        "class-name-format": [
+            1,
+            {
+                "convention": "hyphenatedbem"
+            }
+        ]
+    }
+}
