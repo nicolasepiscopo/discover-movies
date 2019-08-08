@@ -3,8 +3,8 @@
         "indentation": [
             1,
             {
-                "size": "tab"
-            }
+                "size": 4
+            },
         ],
         "class-name-format": [
             1,

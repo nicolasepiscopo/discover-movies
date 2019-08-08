@@ -1,4 +1,5 @@
 import React from 'react'
+import { Page, Jumbotron } from '../../components';
 
 interface Props {
     path: string,
@@ -6,10 +7,15 @@ interface Props {
 }
 
 const NotFound = (props: Props) => {
+    const baseClassName = 'dm-not-found';
+
     return (
-        <div className={'dm-not-found'}>
-            404 - Not Found
-        </div>
+        <Page className={baseClassName}>
+            <Jumbotron
+                title="Not Found"
+                subtitle="Oops.. it seems what you're looking for doesn't exist 😅"
+            />
+        </Page>
     )
 }
 

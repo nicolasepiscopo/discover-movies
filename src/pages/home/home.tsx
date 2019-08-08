@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { Page, Jumbotron, Input } from '../../components'
 
 interface Props {
     movies: object //replace for state shape
@@ -11,9 +12,15 @@ const propTypes = {
 
 const Home = (props: Props) => {
     return (
-        <div className={'dm-home'}>
-            Home
-        </div>
+        <Page className={'dm-home'}>
+            <Jumbotron
+                title="Discover your favourite movies"
+                subtitle="All you ever wanted in only one place"
+                additionalComponent={(
+                    <Input placeholder="Search for a movie..." />
+                )}
+            />
+        </Page>
     )
 }
 

@@ -1,0 +1,27 @@
+@import '../../assets/scss/colors';
+@import '../../assets/scss/mixins';
+
+.dm-jumbotron {
+    margin: 40px 0;
+    text-align: center;
+
+    &__title {
+        @include text-shadow;
+
+        color: $color-text-lightest;
+        font-size: 2.8em;
+        font-weight: bold;
+    }
+
+    &__subtitle {
+        @include text-shadow;
+
+        color: $color-text-lightest;
+        font-size: 1.8em;
+        font-weight: 300;
+    }
+
+    &__additional {
+        margin-top: 60px;
+    }
+}

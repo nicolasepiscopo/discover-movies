@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { Page } from '../../components';
 
 interface Props {
     movies: object //replace for state shape
@@ -11,9 +12,9 @@ const propTypes = {
 
 const Movie = (props: Props) => {
     return (
-        <div className={'dm-movie'}>
+        <Page className={'dm-movie'} isPaddedTop={false}>
             Movie
-        </div>
+        </Page>
     )
 }
 
