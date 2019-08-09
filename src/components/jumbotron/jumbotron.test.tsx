@@ -1,7 +1,7 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 
-import Jumbotron from './jumbotron';
+import Jumbotron from './jumbotron'
 
 describe('[Component] Jumbotron', () => {
     it('should render properly', () => {

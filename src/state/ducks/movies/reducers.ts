@@ -1,29 +1,39 @@
 import { combineReducers } from 'redux'
 
 import { createReducer } from '../../utils'
+import types from './types'
 
-const itemInitialState = {}
-const item = createReducer({
+const initialState = {
+    data: undefined,
+    isLoading: false
+}
 
-}, itemInitialState)
+export const stateShape = {
+    detail: initialState,
+    results: initialState,
+    discoveries: initialState
+}
 
-const listInitialState = []
-const list = createReducer({
+const detail = createReducer({
+    [ types.FETCH_MOVIE_REQUEST ]: state => ({...state, isLoading: true, data: undefined}),
+    [ types.FETCH_MOVIE_SUCCESS ]: (state, {payload: {data}}) => ({...state, isLoading: false, data}),
+    [ types.FETCH_MOVIE_FAILURE ]: (state, {payload: {error}}) => ({...state, isLoading: false, error})
+}, initialState)
 
-}, listInitialState)
+const results = createReducer({
+    [ types.SEARCH_REQUEST ]: state => ({...state, isLoading: true, data: undefined}),
+    [ types.SEARCH_SUCCESS ]: (state, {payload: {data: {results}}}) => ({...state, isLoading: false, data: results}),
+    [ types.SEARCH_FAILURE ]: (state, {payload: {error}}) => ({...state, isLoading: false, error})
+}, initialState)
 
-const isLoadingItem = createReducer({
-
-}, false)
-
-const isLoadingList = createReducer({
-
-}, false)
+const discoveries = createReducer({
+    [ types.DISCOVER_REQUEST ]: state => ({...state, isLoading: true, data: undefined}),
+    [ types.DISCOVER_SUCCESS ]: (state, {payload: {data: {results}}}) => ({...state, isLoading: false, data: results}),
+    [ types.DISCOVER_FAILURE ]: (state, {payload: {error}}) => ({...state, isLoading: false, error})
+}, initialState)
 
 export default combineReducers({
-    item,
-    list,
-
-    isLoadingItem,
-    isLoadingList
+    detail,
+    results,
+    discoveries,
 })

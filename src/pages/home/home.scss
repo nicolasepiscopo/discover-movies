@@ -1,0 +1,32 @@
+@import '../../assets/scss/colors';
+
+.dm-home {
+    &__popular {
+        border-top: 1px solid $color-border-lightest;
+        margin-bottom: 160px;
+        margin-top: 80px;
+    }
+
+    &__images {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+
+        img {
+            margin-bottom: 10px;
+        }
+    }
+
+    &__title {
+        color: $color-text-lightest;
+        font-size: 2em;
+        font-weight: 300;
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    &__hot {
+        color: $color-background-error;
+    }
+}

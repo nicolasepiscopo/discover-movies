@@ -1,7 +1,7 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 
-import Page from './page';
+import Page from './page'
 
 describe('[Component] Page', () => {
     it('should render properly', () => {

@@ -21,12 +21,12 @@ const Jumbotron = (props: Props) => {
 
     return (
         <div className={baseClassName}>
-            <div className={baseClassName + '__title'}>
+            <h1 className={baseClassName + '__title'}>
                 {title}
-            </div>
-            <div className={baseClassName + '__subtitle'}>
+            </h1>
+            <h2 className={baseClassName + '__subtitle'}>
                 {subtitle}
-            </div>
+            </h2>
             {additionalComponent && (
                 <div className={baseClassName + '__additional'}>
                     {additionalComponent}

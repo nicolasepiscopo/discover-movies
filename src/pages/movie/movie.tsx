@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Page } from '../../components';
+import { Page } from '../../components'
 
 interface Props {
     movies: object //replace for state shape

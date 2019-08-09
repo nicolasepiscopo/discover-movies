@@ -1,5 +1,5 @@
 import React from 'react'
-import { Page, Jumbotron } from '../../components';
+import { Page, Jumbotron } from '../../components'
 
 interface Props {
     path: string,
@@ -7,7 +7,7 @@ interface Props {
 }
 
 const NotFound = (props: Props) => {
-    const baseClassName = 'dm-not-found';
+    const baseClassName = 'dm-not-found'
 
     return (
         <Page className={baseClassName}>
