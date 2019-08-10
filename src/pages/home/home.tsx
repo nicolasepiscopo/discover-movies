@@ -2,8 +2,9 @@ import './home.scss'
 
 import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
-import { Page, Jumbotron, Input } from '../../components'
-import { MoviesActions, Movie, MoviesShape } from '../../state'
+
+import { Page, Jumbotron, Input, Poster, Loading } from '../../components'
+import { MoviesActions, MoviesShape } from '../../state'
 import { imageBasePath } from '../../config'
 import { useDebouncedEffect } from '../../state/utils';
 
@@ -38,7 +39,7 @@ const Home = (props: Props) => {
     }, [term])
 
     return (
-        <Page className={'dm-home'}>
+        <Page className={'dm-home'} isLoading={isLoading}>
             <Jumbotron
                 title="Discover your favourite movies"
                 subtitle="All you ever wanted in only one place"
@@ -49,7 +50,6 @@ const Home = (props: Props) => {
                     />
                 )}
             />
-            {isLoading && 'Loading'}
             {resultsMovies && isSearching && (
                 <div className="dm-home__results">
                     <h3 className="dm-home__title">
@@ -57,7 +57,13 @@ const Home = (props: Props) => {
                     </h3>
                     <div className="dm-home__images">
                         {resultsMovies.filter(({poster_path}) => poster_path).map(movie => (
-                            <img key={movie.id} src={imageBasePath + movie.poster_path} />
+                            <Poster
+                                key={movie.id}
+                                src={imageBasePath + movie.poster_path}
+                                title={movie.title}
+                                rating={movie.vote_average}
+                                onClick={() => {}}
+                            />
                         ))}
                     </div>
                 </div>
@@ -69,7 +75,13 @@ const Home = (props: Props) => {
                     </h3>
                     <div className="dm-home__images">
                         {discoveredMovies.filter(({poster_path}) => poster_path).map(movie => (
-                            <img key={movie.id} src={imageBasePath + movie.poster_path} />
+                            <Poster
+                                key={movie.id}
+                                src={imageBasePath + movie.poster_path}
+                                title={movie.title}
+                                rating={movie.vote_average}
+                                onClick={() => {}}
+                            />
                         ))}
                     </div>
                 </div>
