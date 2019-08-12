@@ -13,6 +13,17 @@ $max-width: 980px;
         padding-top: 4em;
     }
 
+    &__backdrop {
+        background-blend-mode: multiply;
+        background-color: $color-background-dark;
+        background-position: center center;
+        background-size: cover;
+        height: 100vh;
+        position: fixed;
+        width: 100%;
+        z-index: -1;
+    }
+
     &__navbar {
         background-color: $color-background-light;
         box-shadow: 0 1px 10px $color-shadow;

@@ -16,11 +16,9 @@ export interface Movie {
 }
 
 export interface Movies {
-    item: Movie,
-    list: Movie[],
+    data: Movie | Movie[],
 
-    isLoadingItem: boolean,
-    isLoadingList: boolean,
+    isLoading: boolean
 }
 
 export interface MoviesActions {

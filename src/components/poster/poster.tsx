@@ -3,6 +3,7 @@ import './poster.scss'
 import React from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
+import Stars from '../stars/stars';
 
 interface Props {
     src: string,
@@ -35,16 +36,6 @@ const Poster = (props: Props) => {
         filledStarClassName,
         baseClassName + '__star--empty'
     )
-    const possibleRatings = [1, 2, 3, 4, 5]
-    let stars: any[] = []
-
-    possibleRatings.forEach(rate => {
-        stars.push(rate <= parseInt(`${rating/2}`) ? (
-            <span key={rate} className={filledStarClassName}>⭑</span>
-        ) : (
-            <span key={rate} className={emptyStarClassName}>⭒</span>
-        ))
-    })
 
     let buttonProps = {}
 
@@ -63,7 +54,9 @@ const Poster = (props: Props) => {
                     {title}
                 </div>
                 <div className={baseClassName + '__rating'}>
-                    {stars}
+                    <Stars
+                        rating={rating}
+                    />
                 </div>
             </div>
         </div>

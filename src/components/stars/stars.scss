@@ -1,0 +1,12 @@
+@import '../../assets/scss/colors';
+
+.dm-stars {
+    &__star {
+        color: $color-background-warning;
+        cursor: default;
+
+        &--empty {
+            color: $color-text-lightest;
+        }
+    }
+}

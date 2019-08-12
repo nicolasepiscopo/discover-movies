@@ -3,3 +3,7 @@
 @mixin text-shadow {
     text-shadow: 0 1px 1px $color-shadow;
 }
+
+@mixin box-shadow {
+    box-shadow: 0 1px 1px $color-shadow;
+}

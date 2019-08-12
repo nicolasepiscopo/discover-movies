@@ -6,13 +6,15 @@ import classnames from 'classnames'
 import { Loading } from '..';
 
 interface Props {
+    backdrop?: string,
     children: any,
     className?: string,
     isPaddedTop?: boolean,
-    isLoading?: boolean
+    isLoading?: boolean,
 }
 
 const propTypes = {
+    backdrop: PropTypes.string,
     children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
     className: PropTypes.string,
     isPaddedTop: PropTypes.bool,
@@ -25,7 +27,7 @@ const defaultProps = {
 }
 
 const Page = (props: Props) => {
-    const { children, className, isPaddedTop, isLoading } = props
+    const { children, className, isPaddedTop, isLoading, backdrop } = props
     const baseClassName = 'dm-page'
     const mainClassName = classnames(baseClassName, className, {
         [baseClassName + '--padded-top']: isPaddedTop
@@ -41,6 +43,14 @@ const Page = (props: Props) => {
                     </li>
                 </ul>
             </nav>
+            {backdrop && (
+                <div
+                    style={{
+                        backgroundImage: `url("${backdrop}")`
+                    }}
+                    className={baseClassName + '__backdrop'}
+                />
+            )}
             <div className={baseClassName + '__container'}>
                 {children}
             </div>

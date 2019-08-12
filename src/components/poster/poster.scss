@@ -38,12 +38,4 @@
         height: 100%;
         width: 100%;
     }
-
-    &__star {
-        color: $color-background-warning;
-
-        &--empty {
-            color: $color-text-lightest;
-        }
-    }
 }

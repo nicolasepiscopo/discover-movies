@@ -42,19 +42,6 @@ describe('[Component] Poster', () => {
         expect(wrapper.find('.dm-poster>div').hasClass('dm-poster__info')).toBe(true)
     })
 
-    it('should render the rating properly', () => {
-        const wrapper = shallow(
-            <Poster
-                src={'/avengers-end-game.png'}
-                title={'Avengers: End Game'}
-                rating={4.5}
-            />
-        )
-
-        expect(wrapper.find('.dm-poster__star').length).toEqual(5)
-        expect(wrapper.find('.dm-poster__star--empty').length).toEqual(3)
-    })
-
     it('should render the title properly', () => {
         const wrapper = shallow(
             <Poster
