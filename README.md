@@ -15,7 +15,7 @@ Built using Test Driven Development approach for reducers and components.
 
 ## Styles
 
-Used SASS with BEM for an escalable solution
+Used SASS with BEM for a scalable solution
 
 ## Demo
 
