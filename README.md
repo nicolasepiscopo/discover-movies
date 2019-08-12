@@ -1,4 +1,25 @@
+## Discover Movies
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+Discover Movies is a simple React & Redux front-end app that allows the user to see the most popular movies and search for other ones.
+
+## State management
+
+- Reducers and Actions
+- React Hooks
+
+## TDD
+
+Built using Test Driven Development approach for reducers and components.
+
+## Styles
+
+Used SASS with BEM for an escalable solution
+
+## Demo
+
+https://demo-discover-movies.herokuapp.com/
 
 ## Available Scripts
 
