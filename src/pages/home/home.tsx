@@ -6,7 +6,7 @@ import PropTypes from 'prop-types'
 import { Page, Jumbotron, Input, Poster, Loading } from '../../components'
 import { MoviesActions, MoviesShape } from '../../state'
 import { imageBasePath } from '../../config'
-import { useDebouncedEffect } from '../../state/utils';
+import { useDebouncedEffect, navigate } from '../../state/utils';
 
 interface Props {
     movies: MoviesShape,
@@ -55,14 +55,19 @@ const Home = (props: Props) => {
                     <h3 className="dm-home__title">
                         🔎 <strong>Searching:</strong> {term}
                     </h3>
+                    {!resultsMovies.length && (
+                        <h3 className="dm-home__title">
+                            No results
+                        </h3>
+                    )}
                     <div className="dm-home__images">
-                        {resultsMovies.filter(({poster_path}) => poster_path).map(movie => (
+                        {resultsMovies.map(movie => (
                             <Poster
                                 key={movie.id}
                                 src={imageBasePath + movie.poster_path}
                                 title={movie.title}
                                 rating={movie.vote_average}
-                                onClick={() => {}}
+                                onClick={navigate.bind(null, `/movie/${movie.id}`)}
                             />
                         ))}
                     </div>
@@ -80,7 +85,7 @@ const Home = (props: Props) => {
                                 src={imageBasePath + movie.poster_path}
                                 title={movie.title}
                                 rating={movie.vote_average}
-                                onClick={() => {}}
+                                onClick={navigate.bind(null, `/movie/${movie.id}`)}
                             />
                         ))}
                     </div>
